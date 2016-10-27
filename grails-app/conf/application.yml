@@ -88,7 +88,7 @@ hibernate:
 dataSource:
     pooled: true
     jmxExport: true
-    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
     username: root
     password: aluno
     dialect: org.hibernate.dialect.MySQL5InnoDBDialect
@@ -98,7 +98,7 @@ environments:
     development:
         dataSource:
             dbCreate: update
-            url: jdbc:mysql://localhost:3306/aula
+            url: jdbc:mysql://localhost:3306/aula?autoReconnect=true&useSSL=false
     test:
         dataSource:
             dbCreate: update

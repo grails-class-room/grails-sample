@@ -1,0 +1,15 @@
+.gradle
+build/
+db/
+target/
+*.class
+.DS_Store
+.idea/
+out/
+print/
+key/
+impressao/
+**/.sass-cache/*
+.asscache
+grails-app/assets/vendor/
+node_modules/

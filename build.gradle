@@ -10,6 +10,10 @@ buildscript {
     }
 }
 
+plugins {
+    id 'com.craigburke.bower-installer' version '2.5.1' //https://github.com/craigburke/bower-installer-gradle
+}
+
 version "0.1"
 group "grails.sample"
 
@@ -60,4 +64,44 @@ dependencies {
 assets {
     minifyJs = true
     minifyCss = true
+}
+
+bower {
+    installBase = 'grails-app/assets/vendor'
+
+    'fontawesome'('4.5.x'){
+        source 'css/**' >> 'css/'
+        source 'fonts/**' >> 'fonts/'
+    }
+
+    'bootstrap-datepicker'('1.5.x'){
+        source "dist/css/bootstrap-datepicker3.css"
+        source "dist/js/bootstrap-datepicker.min.js"
+        source "dist/locales/bootstrap-datepicker.pt-BR.min.js"
+    }
+    'bootstrap'('3.3.x'){
+        source "dist/**"
+    }
+    'jquery'('*')
+
+    'vue'('1.0.26')
+
+    'vue-resource'('0.9.3')
+
+    'vue-form'('*')
+
+
+    'vue-validator'('2.1.5'){
+        source "dist/**"
+    }
+
+    'select2'('4.0.x'){
+        source 'dist/js/**'
+        source 'dist/css/**'
+    }
+
+    'select2-bootstrap-theme'('0.1.x'){
+        source 'dist/**'
+    }
+
 }
